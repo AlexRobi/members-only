@@ -14,6 +14,7 @@ gem 'turbolinks',   '~> 5'
 gem 'jbuilder',     '~> 2.5'
 gem 'bootstrap',    '~> 4.0.0.beta3'
 gem 'jquery-rails'
+gem 'rails-controller-testing'
 
 group :development, :test do
   gem 'sqlite3'
