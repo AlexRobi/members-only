@@ -8,12 +8,22 @@
   box-sizing:         border-box;
 }
 
+@media (max-width: 768px) {
+  #navbarDropdown {
+    padding-left: 0px!important;
+  }
+}
+
 
 /* header */
 
 .navbar-brand {
   letter-spacing: -1px;
   font-weight: bold;
+}
+
+#navbarDropdown {
+  padding: 4px 0px 0px 8px;
 }
 
 /* footer */
