@@ -23,6 +23,12 @@
     </div>
   </div>
 
+  <div class="mb-2 form-check">
+    <%= f.check_box :remember_me, class: "form-check-input", id: "check1" %>
+    <label class="form-check-label" for="check1">Remember me</label>
+  </div>
+
+
 
   <%= f.submit "Log in", class: "btn btn-info btn-block" %>
   <p class="mt-2">New user? <%= link_to "Sign up now!", signup_path %></p>
