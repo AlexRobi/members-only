@@ -16,6 +16,8 @@ gem 'bootstrap',    '~> 4.0.0.beta3'
 gem 'jquery-rails'
 gem 'rails-controller-testing'
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
+gem 'will_paginate', '~> 3.1.0'
+gem 'bootstrap-will_paginate'
 
 group :development, :test do
   gem 'sqlite3'

@@ -1,13 +1,6 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
-end
-require 'test_helper'
-
-class UserTest < ActiveSupport::TestCase
 
   def setup
     @user = User.new(name: "John Doe", email: "johndoe@example.com",
