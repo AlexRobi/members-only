@@ -8,7 +8,7 @@
 
   <%= render 'users/form' %>
   <div class="my-3">
-    <img src="<%= @user.avatar_src %>" />
+    <img class="mb-1" src="<%= @user.avatar_src %>" />
     <%= form_for(@user) do |f| %>
       <%= f.hidden_field :avatar_src, value: generate_avatar %>
       <%= f.submit 'Generate a new avatar' %>

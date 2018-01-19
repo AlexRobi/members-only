@@ -8,7 +8,7 @@ require 'faker'
               password_confirmation: "password")
 end
 
-5.times do
+4.times do
   5.times do |i|
     Post.create(content: "#{Faker::StarWars.quote}",
                 user_id: i)
