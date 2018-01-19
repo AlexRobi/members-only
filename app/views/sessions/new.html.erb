@@ -1,35 +1,41 @@
 <% provide(:title, "Log in") %>
-<h1 class="text-center my-3">Log in</h1>
 
-<%= form_for(:session, url: login_path, html: { class: "col-12 col-md-10 col-lg-8 mx-auto" }) do |f| %>
+<div class="mx-auto col-12 col-md-10 col-lg-8">
 
-  <div class="form-group">
-    <%= f.label :email%>
-    <div class="input-group mb-2 mr-sm-2">
-      <div class="input-group-prepend">
-        <div class="input-group-text">@</div>
+  <h1 class="text-center my-4">Log in</h1>
+
+  <%= form_for(:session, url: login_path) do |f| %>
+
+    <div class="form-group">
+      <%= f.label :email%>
+      <div class="input-group mb-2 mr-sm-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">@</div>
+        </div>
+        <%= f.email_field :email, class: 'form-control', placeholder: "foo@bar.com" %>
       </div>
-      <%= f.email_field :email, class: 'form-control', placeholder: "foo@bar.com" %>
     </div>
-  </div>
 
-  <div class="form-group">
-    <%= f.label :password %>
-    <div class="input-group mb-2 mr-sm-2">
-      <div class="input-group-prepend">
-        <div class="input-group-text">🔒</div>
+    <div class="form-group">
+      <%= f.label :password %>
+      <div class="input-group mb-2 mr-sm-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">🔒</div>
+        </div>
+        <%= f.password_field :password, class: 'form-control', placeholder: "foobar" %>
       </div>
-      <%= f.password_field :password, class: 'form-control', placeholder: "foobar" %>
     </div>
-  </div>
 
-  <div class="mb-2 form-check">
-    <%= f.check_box :remember_me, class: "form-check-input", id: "check1" %>
-    <label class="form-check-label" for="check1">Remember me</label>
-  </div>
-
+    <div class="mb-2 form-check">
+      <%= f.check_box :remember_me, class: "form-check-input", id: "check1" %>
+      <label class="form-check-label" for="check1">Remember me</label>
+    </div>
 
 
-  <%= f.submit "Log in", class: "btn btn-info btn-block" %>
+
+    <%= f.submit "Log in", class: "btn btn-info btn-block" %>
+  <% end %>
+
   <p class="mt-2">New user? <%= link_to "Sign up now!", signup_path %></p>
-<% end %>
+
+</div>

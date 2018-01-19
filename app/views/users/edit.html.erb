@@ -1,0 +1,16 @@
+<% provide(:title, "Settings") %>
+<% provide(:button_text, 'Save changes') %>
+<% provide(:url, user_path) %>
+
+<div class="mx-auto col-12 col-md-10 col-lg-8">
+
+  <h1 class="my-4 text-center">Update your profile</h1>
+
+  <%= render 'users/form' %>
+
+  <div class="my-3 gravatar_edit">
+    <%= gravatar_for(@user, 80) %>
+    <a href="http://gravatar.com/emails" target="_blank">change</a>
+  </div>
+
+</div>

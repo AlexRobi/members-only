@@ -1,27 +1,13 @@
 <% provide(:title, 'Sign up') %>
-<h1 class="text-center my-4">Sign up</h1>
+<% provide(:button_text, 'Create my account') %>
+<% provide(:url, signup_path) %>
 
+<div class="mx-auto col-12 col-md-10 col-lg-8">
 
-<%= form_for(@user, url: signup_path, html: { class: "col-12 col-md-10 col-lg-8 mx-auto" }) do |f| %>
-  <%= render 'shared/error_messages' %>
+  <h1 class="text-center my-4">Sign up</h1>
 
-  <div class="form-group">
-    <%= f.text_field :name, class: "form-control", placeholder: "Name" %>
-  </div>
-  
-  <div class="form-group">
-    <%= f.email_field :email, class: "form-control", placeholder: "Email" %>
-  </div>
-  
-  <div class="form-group">
-    <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
-  </div>
- 
-  <div class="form-group">
-   <%= f.password_field :password_confirmation, class: "form-control", 
-                         placeholder: "Password confirmation" %>
-  </div>
-  
-  <%= f.submit "Create my account", class: "btn btn-info btn-block" %>
+  <%= render 'users/form' %>
+
   <p class="my-2">Already have an account? <%= link_to "Log in.", login_path %></p>
-<% end %>
+
+</div>
