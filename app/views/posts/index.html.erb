@@ -16,22 +16,27 @@
   <% end %>
 </div>
 
-<h1 class="text-center my-3">Recent posts</h1>
+<h1 class="text-center my-3 h1-pi">Recent posts</h1>
 
 <%= will_paginate(@posts, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
 
   <% @posts.each do |post| %>
     <div class="card border-info mb-3">
       <div class="card-header">
-      Author:
       <% if logged_in? %>
+        <img class="avatar" src="<%= post.user.avatar_src %>" />
         <%= (link_to post.user.name, post.user) unless post.user.nil? %>
       <% else %>
         [<%= link_to "Log in", login_path %> to see the author name.]
       <% end %>
       </div>
       <div class="card-body text-info">
-        <h5 class="card-title"><%= post.content %></h5>
+        <p class="card-text"><%= post.content %></p>
+          <p class="card-text">
+            <small class="text-muted">
+              Created <%= time_ago_in_words(post.created_at) %> ago. 
+            </small>
+          </p>
       </div>
     </div>
   <% end %>

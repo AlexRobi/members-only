@@ -14,7 +14,25 @@
   }
 }
 
+/* header */
+
+.navbar-brand {
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#navbarDropdown {
+  padding: 4px 0px 0px 8px;
+  .avatar {
+    width: 35px;
+  }
+}
+
 /* Post index */
+
+.h1-pi {
+  color: #17A2B8;
+}
 
 .page-item.active .page-link {
   z-index: 1;
@@ -30,15 +48,30 @@
   }
 }
 
-/* header */
-
-.navbar-brand {
-  letter-spacing: -1px;
-  font-weight: bold;
+.card-header {
+  .avatar {
+    width: 60px;
+    border: 1px solid #17A2B8;
+    border-radius: 6px;
+  }
+  a {
+    position: relative;
+    bottom: -22px;
+    font-weight: bold;
+    right: -10px;
+  }
 }
 
-#navbarDropdown {
-  padding: 4px 0px 0px 8px;
+/* User show */
+
+.avatar-us {
+  width: 153px;
+  border: 3px solid #17A2B8;
+}
+
+.h1-us {
+  color: #17A2B8;
+  margin-top: 10px;
 }
 
 /* footer */

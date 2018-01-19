@@ -1,5 +1,22 @@
 <% provide(:title, @user.name) %>
 
-<div class="text-center mt-4"><%= gravatar_for @user %></div>
-<h1 class="text-center"><%= @user.name %></h1>
-<h5 class="text-center">Number of posts: (WiP)</h5>
+<div class="text-center mt-4"><img class="avatar-us" src="<%= @user.avatar_src %>" /></div>
+<h1 class="text-center h1-us"><%= @user.name %></h1>
+<h5 class="text-center mb-3 h1-us"><%= pluralize(@user.posts.count, 'post') %></h5>
+
+<% @user.posts.all.each do |post| %>
+  <div class="card border-info mb-3">
+    <div class="card-header">
+      <img class="circle-rounded avatar" src="<%= post.user.avatar_src %>" />
+      <%= (link_to post.user.name, post.user) unless post.user.nil? %>
+    </div>
+    <div class="card-body text-info">
+      <p class="card-text"><%= post.content %></p>
+        <p class="card-text">
+          <small class="text-muted">
+            Created <%= time_ago_in_words(post.created_at) %> ago. 
+          </small>
+        </p>
+    </div>
+  </div>
+<% end %>
