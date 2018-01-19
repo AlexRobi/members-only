@@ -15,7 +15,7 @@ end
   end
 end
 
-User.create(name: "Foo Bar", email: "foo@bar.com",
+User.create(name: "Example User", email: "foo@bar.com",
             password: "foobar",
-            avatar_src: "#{Faker::Avatar.image('avatar')}",
+            avatar_src: "#{Faker::Avatar.image("exampleuser", "150x150", "jpg", "set4", "bg2")}",
             password_confirmation: "foobar")
