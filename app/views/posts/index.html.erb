@@ -24,7 +24,7 @@
     <div class="card border-info mb-3">
       <div class="card-header">
       <% if logged_in? %>
-        <img class="avatar" src="<%= post.user.avatar_src %>" />
+        <img class="avatar" src="<%= (post.user.avatar_src) unless post.user.nil? %>" />
         <%= (link_to post.user.name, post.user) unless post.user.nil? %>
       <% else %>
         [<%= link_to "Log in", login_path %> to see the author name.]

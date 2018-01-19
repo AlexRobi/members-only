@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update, :show]
+  before_action :not_logged_in,  only: [:new, :create]
   before_action :correct_user,   only: [:edit, :update]
 
   def show
@@ -14,6 +15,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
+      remember @user
       flash[:success] = "Welcome to Members-Only!"
       redirect_to @user
     else
@@ -29,7 +31,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       flash[:success] = "Profile updated"
-      redirect_to @user
+      redirect_to edit_user_path(@user)
     else
       render 'edit'
     end
@@ -39,7 +41,8 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation)
+                                   :password_confirmation,
+                                   :avatar_src)
     end
 
     # Before filters
@@ -49,6 +52,12 @@ class UsersController < ApplicationController
       unless logged_in?
         flash[:danger] = "Please log in."
         redirect_to login_url
+      end
+    end
+
+    def not_logged_in
+      if logged_in?
+        redirect_to root_url
       end
     end
 
